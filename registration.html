@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Course Registration</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="script.js" rel="javascript">
+
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <!-- Registration Form Section -->
+            <div class="form-section">
+                <h2>Course Registration</h2>
+                <div class="success-message" id="successMessage">
+                    ✓ Course registered successfully!
+                </div>
+
+                <form id="registrationForm" novalidate>
+                    <div class="form-group">
+                        <label for="studentName">Student Name *</label>
+                        <input
+                            type="text"
+                            id="studentName"
+                            name="studentName"
+                            placeholder="Enter full name"
+                            required
+                        >
+                        <div class="error-message" id="nameError">
+                            Student name is required
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="matricNumber">Matric Number *</label>
+                        <input
+                            type="text"
+                            id="matricNumber"
+                            name="matricNumber"
+                            placeholder="e.g., LCU/CS/2023/001"
+                            pattern="[A-Z]{3}/[A-Z]{2}/\d{4}/\d{3}"
+                            required
+                        >
+                        <div class="error-message" id="matricError">
+                            Matric number must follow format: LCU/CS/2023/001
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="courseCode">Course Code *</label>
+                        <input
+                            type="text"
+                            id="courseCode"
+                            name="courseCode"
+                            placeholder="e.g., CS101"
+                            required
+                        >
+                        <div class="error-message" id="codeError">
+                            Course code is required
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="courseTitle">Course Title *</label>
+                        <input
+                            type="text"
+                            id="courseTitle"
+                            name="courseTitle"
+                            placeholder="e.g., Introduction to Programming"
+                            required
+                        >
+                        <div class="error-message" id="titleError">
+                            Course title is required
+                        </div>
+                    </div>
+
+                    <button type="submit">Register Course</button>
+                </form>
+            </div>
+
+            <!-- Registered Courses Section -->
+            <div class="courses-section">
+                <h2>Registered Courses</h2>
+                <div class="courses-list" id="coursesList">
+                    <div class="empty-message">No courses registered yet</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
